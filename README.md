@@ -23,6 +23,7 @@ The maintainer of ONScripter-EN (as of February 2023) is Galladite, who can be r
 
 The main contributor to CMake and minor platform support is Playmer, who can be reached at:
 
+- *E-mail*: playmer@gmail.com
 - *GitHub*: [@Playmer](https://github.com/Playmer)
 
 *"Correspondence in English, or regarding issues related to this branch in particular, should be directed to [@Galladite27](https://github.com/Galladite27) or to [@lightbinder](https://github.com/lightbinder), as it contains a large number of customisations that have nothing to do with Ogapee, and neither Haeleth nor Uncle Mion are actively maintaining ONScripter-EN."*
