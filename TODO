@@ -1,3 +1,8 @@
 Notes to Playmer:
 
 I'm happy to help with this, but you're free to do it yourself if you'd rather: the build instructions need updating regarding the new system. At some point, I'll tweak the build instructions file in the main repo to cover just the main methods of compilation, or otherwise explain how to use this repo.
+
+General notes and todo:
+One idea I had, which could make it EVEN EASIER for minor developers to maintain custom code and patches to target a specific platform, is that each preset could have a file called "git.version" containing a commit hash of the latest version it officially supports. Then, instead of the main repo changing and leaving behind any ports not actively maintained, the config.sh script could simply checkout that version of the main repo and apply the patches to and build based on that!
+In fact, I like this idea so much I think I'll say now: I'm going to try implementing this (hopefully tomorrow), and I'll share this on the Discord chat now.
+-Galladite 2024-10-09
