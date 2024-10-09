@@ -6,3 +6,5 @@ General notes and todo:
 One idea I had, which could make it EVEN EASIER for minor developers to maintain custom code and patches to target a specific platform, is that each preset could have a file called "git.version" containing a commit hash of the latest version it officially supports. Then, instead of the main repo changing and leaving behind any ports not actively maintained, the config.sh script could simply checkout that version of the main repo and apply the patches to and build based on that!
 In fact, I like this idea so much I think I'll say now: I'm going to try implementing this (hopefully tomorrow), and I'll share this on the Discord chat now.
 -Galladite 2024-10-09
+
+ALSO, in relation to the above, since I am making there to be a custom makefile when using cmake so the `./configure; make` process can be maintained, I should make it so that `make clean` actually reverts all changes and goes back to HEAD. I love how this will work!
