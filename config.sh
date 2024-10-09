@@ -37,8 +37,20 @@ preset_custom() {
     # -Galladite 2024-10-09
     OPT_FOUND=`ls eps/presets | grep "$OPT" | head -n 1`
     if [ -n "$OPT_FOUND" ]; then
+        # Save the EPS folder - we don't want to re-download it, *just in case* it was pre-downloaded and we're now offline, for example
+        # UNTESTED - does this cause this script to fail, or is it cached in RAM in its entirety before execution? Hopefully the latter.
+        tmpdir=$(mktemp -d)
+        mv eps "$tmpdir/"
+
+        # Go to the appropriate commit, ready to apply patches and stuff - also UNTESTED
+        git checkout "$(cat $tmpdir/eps/presets/$OPT_FOUND/git.version)"
+
+        # Bring back in the EPS folder
+        mv "$tmpdir/eps" ./
+        rmdir "$tmpdir"
+
         # Run all scripts within that folder
-        for file in eps/presets/*.sh; do
+        for file in eps/presets/$OPT_FOUND/*.sh; do
             sh "$file" || echo "Error: script within preset returned error: $file" && exit 1
         done
     else
